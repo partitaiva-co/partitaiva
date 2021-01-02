@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<h1>Calcolo Costi e Ricavi della Partita IVA in Regime Forfettario</h1>
+<body>
+<p>Inserisci i seguenti 3 parametri.</p>
+<p>Fatturato: <input type="number" value="50000" id="fatturato"></p>
+<p>
+<label for="codice_ateco">Tipo di attivita'</label>
+<select class="codice_ateco" name="ateco" id="ateco">
+	<option value="40 45000">Industrie alimentari e delle bevande</option>
+	<option value="40 50000">Commercio all’ingrosso e al dettaglio</option>
+	<option value="40 40000">Commercio ambulante di prodotti alimentari e bevande</option>
+	<option value="54 30000">Commercio ambulante di altri prodotti</option>
+	<option value="86 25000">Costruzioni e attività immobiliari</option>
+	<option value="62 25000">Intermediari del commercio</option>
+	<option value="40 50000">Attività dei servizi di alloggio e di ristorazione</option>
+	<option value="78 30000">Attività professionali, scientifiche, tecniche, sanitarie, di istruzione, servizi finanziari ed assicurativi</option>
+	<option value="67 30000">Altre attività economiche</option>
+</select>
+</p>
+
+<p>
+<label for="codice_ateco">Anni di attivita'</label>
+<select name="anni" id="anni">
+	<option value="5">Meno di 5 anni</option>
+	<option value="15">Piu' di 5 anni</option>
+</select>
+</p>
+
+Limite di ricavi lordi annuo: <div style="display: inline;" id="ateco_ricavi"></div><br>
+Percentuale: <div style="display: inline;" id="ateco_percentage"></div><br>
+Imponibile lordo: <div style="display: inline;" id="imponibile_lordo"></div><br>
+Contributi: <div style="display: inline;" id="contributi"></div><br>
+Imponibile netto: <div style="display: inline;" id="imponibile_netto"></div><br>
+Imposte: <div style="display: inline;" id="imposte"></div><br>
+<br>
+Tasse (contributi + imposte): <div style="display: inline;" id="versamenti"></div><br>
+Guadagno netto: <div style="display: inline; font-weight: bold" id="guadagno_netto"></div><br>
+Guadagno netto sul fatturato: <div style="display: inline;" id="guadagno_percentage"></div><br>
+Tasse effettive sul fatturato: <div style="display: inline;" id="taxes_percentage"></div><br>
+<br>
+<button onclick="calculate_piva()">Calcola</button>
+
+<script>
+var _0x4ed5=['279133uGLVUz','versamenti','1YzdfGj','value','5000','3bkljvm','\x20*\x20','ateco_ricavi','contributi','740379hbwDwf','6000','imposte','1qYrHjv','ateco','innerHTML','384929uWMoax','guadagno_netto','15235fDuQhj','split','118493PnpBYh','toFixed','imponibile_netto','fatturato','129878eEZWQx','391915qMDVyV','ateco_percentage','10KCBYTb','getElementById'];var _0x3e94=function(_0x43d2aa,_0x6c8ece){_0x43d2aa=_0x43d2aa-0x18f;var _0x4ed5ff=_0x4ed5[_0x43d2aa];return _0x4ed5ff;};(function(_0x15c3ce,_0x459c25){var _0xbe67cd=_0x3e94;while(!![]){try{var _0x18a28f=parseInt(_0xbe67cd(0x197))*parseInt(_0xbe67cd(0x1a6))+parseInt(_0xbe67cd(0x1a2))*parseInt(_0xbe67cd(0x199))+parseInt(_0xbe67cd(0x19b))*parseInt(_0xbe67cd(0x1a9))+-parseInt(_0xbe67cd(0x1a4))+parseInt(_0xbe67cd(0x19f))+parseInt(_0xbe67cd(0x1a0))+parseInt(_0xbe67cd(0x194))*-parseInt(_0xbe67cd(0x191));if(_0x18a28f===_0x459c25)break;else _0x15c3ce['push'](_0x15c3ce['shift']());}catch(_0x30d378){_0x15c3ce['push'](_0x15c3ce['shift']());}}}(_0x4ed5,0x6071f));function calculate_piva(){var _0x380327=_0x3e94,_0x4fcb3c=['40',_0x380327(0x1a8)],_0x50839f=['40',_0x380327(0x192)];fatturato_value=document['getElementById'](_0x380327(0x19e))[_0x380327(0x1a7)],ateco_percentage=document[_0x380327(0x1a3)](_0x380327(0x195))['value'][_0x380327(0x19a)]('\x20')[0x0],ateco_ricavi=document[_0x380327(0x1a3)](_0x380327(0x195))[_0x380327(0x1a7)][_0x380327(0x19a)]('\x20')[0x1],imposta_sostitutiva=document[_0x380327(0x1a3)]('anni')[_0x380327(0x1a7)];if(fatturato_value<0xfde8){imponibile_lordo=fatturato_value*ateco_percentage/0x64,contributi=imponibile_lordo*25.72/0x64,imponibile_netto=imponibile_lordo-contributi,imposte=imponibile_netto*imposta_sostitutiva/0x64,versamenti=(contributi+imposte)[_0x380327(0x19c)](0x2),guadagno_netto=(fatturato_value-versamenti)['toFixed'](0x2),guadagno_percentage=(guadagno_netto/fatturato_value*0x64)[_0x380327(0x19c)](0x2),taxes_percentage=(0x64-guadagno_percentage)[_0x380327(0x19c)](0x2);;}else y=fatturato_value+0x1,result='Sorry\x20cannot\x20be\x20forfettario'+y;document[_0x380327(0x1a3)](_0x380327(0x18f))[_0x380327(0x196)]=ateco_ricavi,document[_0x380327(0x1a3)](_0x380327(0x1a1))[_0x380327(0x196)]=ateco_percentage+'%',document[_0x380327(0x1a3)]('imponibile_lordo')[_0x380327(0x196)]=imponibile_lordo+'\x20('+fatturato_value+_0x380327(0x1aa)+ateco_percentage+'%)',document[_0x380327(0x1a3)](_0x380327(0x190))[_0x380327(0x196)]=contributi+'\x20('+imponibile_lordo+'\x20*\x2025.72%)',document[_0x380327(0x1a3)](_0x380327(0x19d))['innerHTML']=imponibile_netto+'\x20('+imponibile_lordo+'\x20-\x20'+contributi+')',document[_0x380327(0x1a3)](_0x380327(0x193))[_0x380327(0x196)]=imposte+'\x20('+imponibile_netto+'\x20*\x20'+imposta_sostitutiva+'%)',document[_0x380327(0x1a3)](_0x380327(0x1a5))['innerHTML']=versamenti+'\x20('+contributi+'\x20+\x20'+imposte+')',document[_0x380327(0x1a3)](_0x380327(0x198))[_0x380327(0x196)]=guadagno_netto,document[_0x380327(0x1a3)]('guadagno_percentage')[_0x380327(0x196)]=guadagno_percentage+'%',document[_0x380327(0x1a3)]('taxes_percentage')[_0x380327(0x196)]=taxes_percentage+'%';}
+</script>
+
+</body>
+</html>
